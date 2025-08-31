@@ -1,9 +1,13 @@
 import math_utils
-from tools.file_utils import utilFile
+import tools 
+from tools import *
 
 def main()->None:
     res = math_utils.add(10,5)
-    utilFile();
+    tools.utilFile()
+    tools.fileStrinUtil()
+    tools.impitAll.fileAllImport()
+main()
 
 if __name__ == 'main':
     main()
