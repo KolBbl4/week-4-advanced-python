@@ -1,16 +1,21 @@
-def generator_sqr(m)->int:
-    for i in range(m):
-        yield i**2
+class Fibonacci:
+   
+    def __init__(self, count):
+        self.count = count
+        self.index = 0
+        self.a, self.b = 0, 1
+    
+    def __iter__(self):
+        return self
 
+    def __next__(self):
+        if self.index >= self.count:
+            raise StopIteration
+        value = self.a
+        self.a, self.b = self.b, self.a + self.b
+        self.index += 1
+        return value
 
-def main()->None:
-    VarSQRT = [x**2 for x in range(5)]
-    print(VarSQRT)
-    m = 5
-    res = generator_sqr(m)
-    for _ in range(m):
-        print(next(res))
-        
-
-if __name__ == "__main__":
-    main()
+fib = Fibonacci(10)
+for num in fib:
+    print(num)
